@@ -7,14 +7,11 @@ int ex;
 void show_cells(char * cells) {
     cout << "   1   2   3" << endl;
     cout << " +---+---+---+" << endl;
-    cout << "a| " << cells[0] << " | " << cells[1] << " | " << cells[2] <<
-    " |" << endl;
+    cout << "a| " << cells[0] << " | " << cells[1] << " | " << cells[2] <<" |" << endl;
     cout << " +---+---+---+" << endl;
-    cout << "b| " << cells[3] << " | " << cells[4] << " | " << cells[5] <<
-    " |" << endl;
+    cout << "b| " << cells[3] << " | " << cells[4] << " | " << cells[5] <<" |" << endl;
     cout << " +---+---+---+" << endl;
-    cout << "c| " << cells[6] << " | " << cells[7] << " | " << cells[8] <<
-    " |" << endl;
+    cout << "c| " << cells[6] << " | " << cells[7] << " | " << cells[8] <<" |" << endl;
     cout << " +---+---+---+" << endl;
 }
 void show_available_moves(char op, char * cells) {
@@ -45,8 +42,7 @@ int make_move(int move, char op, char * cells) {
     istringstream stream(string);
     stream >> cell;
     while (cell < 1 || cell > (11 - move)) {
-        cout << endl << "You can not use this move. Enter another move" <<
-        endl;
+        cout << endl << "You can not use this move. Enter another move" <<endl;
         getline(cin, string);
         istringstream stream(string);
         stream >> cell;
@@ -71,17 +67,13 @@ int make_move(int move, char op, char * cells) {
 }
 char check(char * cells) {
     for (int i = 0; i < 3; i++) {
-        if ((cells[i * 3] == cells[i * 3 + 1] && cells[i * 3 + 1] == cells[
-                                                                           i * 3 + 2]) && cells[i * 3] != ' ') {
+        if ((cells[i * 3] == cells[i * 3 + 1] && cells[i * 3 + 1] == cells[i * 3 + 2]) && cells[i * 3] != ' ') {
             return cells[i];;
         }
-        if ((cells[i] == cells[i + 3] && cells[i + 3] == cells[i + 6]) &&
-            cells[i] != ' ') {
+        if ((cells[i] == cells[i + 3] && cells[i + 3] == cells[i + 6]) &&cells[i] != ' ') {
             return cells[i];
         }
-        if (((cells[2] == cells[4] && cells[4] == cells[6]) && cells[2] !=
-             ' ') || ((cells[0] == cells[4] && cells[4] == cells[8]) &&
-                      cells[0] != ' ')) {
+        if (((cells[2] == cells[4] && cells[4] == cells[6]) && cells[2] !=' ') || ((cells[0] == cells[4] && cells[4] == cells[8]) &&cells[0] != ' ')) {
             return cells[i];
         }
     }
