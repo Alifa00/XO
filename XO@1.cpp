@@ -88,17 +88,7 @@ char check(char * cells) {
     return ' ';
 }
 int main() {
-    char cells[9] = {
-        ' ',
-        ' ',
-        ' ',
-        ' ',
-        ' ',
-        ' ',
-        ' ',
-        ' ',
-        ' '
-    };
+    char cells[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
     char op;
     show_cells(cells);
     for (int move = 1; move <= 9; move++) {
